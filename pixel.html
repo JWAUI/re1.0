@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片转像素画</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>照片转像素画</h1>
+
+        <div class="controls">
+            <label for="imageUpload" class="upload-button">
+                <span>Upload</span>
+            </label>
+            <input type="file" id="imageUpload" accept="image/*">
+
+            <div class="slider-container">
+                <label for="pixelSize">像素大小: <span id="pixelSizeValue">10</span>px</label>
+                <input type="range" id="pixelSize" min="2" max="50" value="10">
+            </div>
+
+            <!-- 添加模式选择下拉菜单 -->
+            <div class="mode-selector">
+                <label for="modeSelect">选择模式:</label>
+                <select id="modeSelect">
+                    <option value="normal">普通</option>
+                    <option value="8bit">8位机</option>
+                    <option value="16bit">16位机</option>
+                </select>
+            </div>
+
+            <button id="convertButton" class="icon-button">
+                <span>Convert</span>
+            </button>
+            <a id="downloadLink" class="icon-button" style="display:none;">
+                <span>Download</span>
+            </a>
+        </div>
+
+        <div class="canvas-container">
+            <div class="image-preview">
+                <h2>原图预览</h2>
+                <img id="originalImage" src="#" alt="请上传图片" style="display:none;">
+                <p id="uploadPlaceholder">请先上传一张图片</p>
+            </div>
+            <div class="pixelated-result">
+                <h2>像素画预览</h2>
+                <canvas id="pixelCanvas"></canvas>
+                <p id="pixelPlaceholder">转换后将在此显示</p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
